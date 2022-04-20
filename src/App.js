@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand } from 'reactstrap';
+import Overview from './components/OverviewComponent';
 import './App.css';
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
           <NavbarBrand href="/">OC Vacation Home</NavbarBrand>
         </div>
       </Navbar>
+      <Overview />
     </div>
   );
 }
