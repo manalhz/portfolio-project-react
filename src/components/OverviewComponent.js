@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Card, CardImg, CardText, CardBody, CardTitle, CardDeck } from 'reactstrap';
 
 class Overview extends Component {
   constructor(props) {
@@ -27,22 +28,38 @@ class Overview extends Component {
     };
   }
 
-  render() {
-    const amenities = this.state.amenities.map(amenity => {
-      return (
-        <div className="col">
-          <img src={amenity.image} alt={amenity.name} />
-          <h2>{amenity.name}</h2>
-          <p>{amenity.description}</p>
-        </div>
-      );
-    });
+  renderAmenities(amenities) {
+    return (
+      <CardDeck>
+        {amenities.map(amenity => {
+          return (
+            <Card key={amenity.id}>
+              <CardImg top width="100%" src={amenity.image} alt={amenity.name} />
+              <CardBody>
+                <CardTitle>{amenity.name}</CardTitle>
+                <CardText>{amenity.description}</CardText>
+              </CardBody>
+            </Card>
+          );
+        })}
+      </CardDeck>
+    )
+  }
 
+  renderFloorPlan() {
+    return <h2>Floor Plan</h2>
+  }
+
+  renderMap() {
+    return <h2>Map</h2>
+  }
+
+  render() {
     return (
       <div className="container">
-        <div className="row">
-          {amenities}
-        </div>
+        {this.renderAmenities(this.state.amenities)}
+        {this.renderFloorPlan()}
+        {this.renderMap()}
       </div>
     );
   }
