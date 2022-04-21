@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand } from 'reactstrap';
+import Header from './components/HeaderComponent';
+import Footer from './components/FooterComponent';
 import Overview from './components/OverviewComponent';
 import { AMENITIES } from './shared/amenities';
 import './App.css';
@@ -15,12 +16,9 @@ class App extends Component {
   render() {
     return (
       <div className="App" >
-        <Navbar dark color="dark">
-          <div className="container">
-            <NavbarBrand href="/">OC Vacation Home</NavbarBrand>
-          </div>
-        </Navbar>
+        <Header />
         <Overview amenities={this.state.amenities} />
+        <Footer />
       </div>
     );
   }
