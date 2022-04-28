@@ -2,13 +2,13 @@ import React from 'react';
 
 function Footer(props) {
   return (
-    <footer className="site-footer">
+    <footer className="mt-3 site-footer">
       <div className="container">
         <div className="row">
           <div class="col-12 text-center">
-            <a class="btn btn-social-icon btn-instagram" href="http://instagram.com/"><i class="fa fa-instagram"></i></a>
-            <a class="btn btn-social-icon btn-facebook" href="http://facebook.com/"><i class="fa fa-facebook"></i></a>
-            <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
+            <a class="btn btn-social-icon btn-instagram" href="http://instagram.com/"><i class="fa fa-instagram"></i></a>{' '}
+            <a class="btn btn-social-icon btn-facebook" href="http://facebook.com/"><i class="fa fa-facebook"></i></a>{' '}
+            <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>{' '}
           </div>
         </div>
         <div class="row">
