@@ -1,7 +1,10 @@
 import React from 'react';
-import { Button, Card, CardImg, CardImgOverlay, CardText, CardTitle } from "reactstrap";
+import { Card, CardImg, CardImgOverlay, CardText, CardTitle } from "reactstrap";
+import { Link } from "react-router-dom";
+
 
 function Home(props) {
+
   return (
     <div>
       <Card inverse>
@@ -15,7 +18,7 @@ function Home(props) {
           <CardTitle tag="h2">
             Welcome to OC
           </CardTitle>
-          <Button className="btn-info justify-content-center" href="/">Check Availability</Button>
+          <Link to="/availability" className="btn btn-info justify-content-center" >Check Availability</Link>
         </CardImgOverlay>
       </Card>
       <Card color="info">
