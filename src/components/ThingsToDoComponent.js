@@ -93,7 +93,7 @@ class ThingsToDo extends Component {
                   {item.description}
                 </p>
               </div>
-            ))};
+            ))}
           </Slide>
         </div>
         <PlacesList />
