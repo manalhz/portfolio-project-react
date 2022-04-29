@@ -71,8 +71,8 @@ body {
   display: flex;
   text-align: center;
   justify-content: center;
-  align-items: center;
+  align-items: top;
   margin: 0;
-  background: #5bc0de
-;
+  padding-top: 20px;
+  background: #5bc0de;
 }

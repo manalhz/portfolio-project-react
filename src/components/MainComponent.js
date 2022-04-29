@@ -5,6 +5,7 @@ import Overview from './OverviewComponent';
 import Gallery from './GalleryComponent';
 import Availability from './AvailabilityComponent';
 import ThingsToDo from './ThingsToDoComponent';
+import Reviews from './ReviewsComponent'
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 
@@ -21,6 +22,7 @@ class Main extends Component {
           <Route exact path='/gallery' render={() => <Gallery />} />
           <Route exact path='/availability' component={Availability} />
           <Route exact path='/things-to-do' render={() => <ThingsToDo />} />
+          <Route exact path='/reviews' render={() => <Reviews />} />
           <Redirect to='/home' />
         </Switch>
         <Footer />
