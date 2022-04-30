@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle, CardDeck } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle, CardDeck, Nav, NavItem, NavLink } from 'reactstrap';
 import { AMENITIES } from '../shared/amenities';
 
 class Overview extends Component {
@@ -10,10 +10,28 @@ class Overview extends Component {
     };
   }
 
+  renderNavPill() {
+    return (
+      <div>
+        <Nav pills className='btn-light'>
+          <NavItem>
+            <NavLink className='text-info' href="#amenities">Amenities</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink className='text-info' href="#floorplan">Floor Plan</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink className='text-info' href="#map">Map</NavLink>
+          </NavItem>
+        </Nav>
+      </div>
+    );
+  }
+
   renderAmenities(amenities) {
     return (
       <div>
-        <h2 className="text-center mt-4">Amenities</h2>
+        <h2 id="amenities" className="text-center mt-4">Amenities</h2>
         <CardDeck>
           {amenities.map(amenity => {
             return (
@@ -34,7 +52,7 @@ class Overview extends Component {
   renderFloorPlan() {
     return (
       <div className="text-center mt-3">
-        <h2>Floor Plan</h2>
+        <h2 id="floorplan">Floor Plan</h2>
         <Card className="col-md-8 offset-md-2">
           <CardImg src="assets/condo-imgs/floorplan.PNG" />
         </Card>
@@ -45,7 +63,7 @@ class Overview extends Component {
   renderMap() {
     return (
       <div className="text-center container mt-3 mb-5">
-        <h2>Map</h2>
+        <h2 id="map">Map</h2>
         <div className="row row-content">
           <div className="col col-lg-10 offset-lg-1">
             <div className="mapouter">
@@ -66,6 +84,7 @@ class Overview extends Component {
   render() {
     return (
       <div className="container">
+        {this.renderNavPill()}
         {this.renderAmenities(this.state.amenities)}
         {this.renderFloorPlan()}
         {this.renderMap()}
