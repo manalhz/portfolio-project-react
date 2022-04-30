@@ -86,8 +86,8 @@ class Gallery extends Component {
               </div>
             </ModalBody>
           </Modal>
-        </div >
-      </div >
+        </div>
+      </div>
     );
   }
 }
