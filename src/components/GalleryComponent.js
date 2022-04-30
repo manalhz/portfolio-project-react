@@ -7,7 +7,7 @@ import {
   CardDeck,
   Modal,
   ModalHeader,
-  ModalBody
+  ModalBody,
 } from 'reactstrap';
 import { Slide } from 'react-slideshow-image';
 import { GALLERY } from '../shared/gallery';
@@ -66,24 +66,28 @@ class Gallery extends Component {
     return (
       <div className="container">
         {this.renderGallery(this.state.gallery)};
-        <Modal isOpen={this.state.isShowingSlideshow} toggle={this.toggle} className={this.props.showSlideShow}>
-          <ModalHeader toggle={this.toggle}>Gallery</ModalHeader>
-          <ModalBody>
-            <div className="slide-container">
-              <Slide defaultIndex={this.state.selectedPhoto} autoplay={false}>
-                {this.state.gallery.map((item, id) => (
-                  <div className="each-slide" key={id}>
-                    <img style={{ maxHeight: "300px" }} src={item.image} />
-                    <div className="text-center mt-2">
-                      {item.description}
+        <div className="row">
+          <Modal isOpen={this.state.isShowingSlideshow} toggle={this.toggle} className={this.props.showSlideShow}>
+            <ModalHeader className="col-12" toggle={this.toggle}>
+              <h3 className="offset-4">Gallery</h3>
+            </ModalHeader>
+            <ModalBody>
+              <div className="slide-container">
+                <Slide defaultIndex={this.state.selectedPhoto} autoplay={false}>
+                  {this.state.gallery.map((item, id) => (
+                    <div className="each-slide" key={id}>
+                      <img style={{ maxHeight: "300px" }} src={item.image} />
+                      <div className="text-center mt-2">
+                        {item.description}
+                      </div>
                     </div>
-                  </div>
-                ))};
-              </Slide>
-            </div>
-          </ModalBody>
-        </Modal>
-      </div>
+                  ))};
+                </Slide>
+              </div>
+            </ModalBody>
+          </Modal>
+        </div >
+      </div >
     );
   }
 }
